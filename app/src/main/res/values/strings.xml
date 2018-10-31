@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NGO Education</string>
+    <string name="download_channel_name">Download</string>
 </resources>
