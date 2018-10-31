@@ -1,13 +1,18 @@
 package com.bugscript.ngo;
 
 import android.annotation.SuppressLint;
+import android.app.PictureInPictureParams;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
+import android.graphics.Point;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Rational;
+import android.view.Display;
 import android.view.View;
-import android.widget.Toast;
 
 import com.bugscript.ngo.Services.VideoDownloadService;
 import com.bugscript.ngo.Utilities.DownloadUtil;
@@ -92,5 +97,20 @@ public class VideoActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            Display display = getWindowManager().getDefaultDisplay();
+            Point size = new Point();
+            display.getSize(size);
+            Rational aspectRatio = new Rational(size.x, size.y);
+            PictureInPictureParams.Builder mPictureInPicture = null;
+            mPictureInPicture = new PictureInPictureParams.Builder();
+            mPictureInPicture.setAspectRatio(aspectRatio).build();
+            enterPictureInPictureMode(mPictureInPicture.build());
+        }
     }
 }

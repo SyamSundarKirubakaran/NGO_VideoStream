@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".VideoActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"/>
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:supportsPictureInPicture="true"/>
         <service android:name=".Services.VideoDownloadService" />
     </application>
 
