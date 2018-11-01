@@ -17,8 +17,8 @@ public class InfoActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent toVisitingCard = new Intent(InfoActivity.this, VideoActivity.class);
-                startActivity(toVisitingCard);
+                Intent toVideoActivity = new Intent(InfoActivity.this, VideoActivity.class);
+                startActivity(toVideoActivity);
             }
         });
     }

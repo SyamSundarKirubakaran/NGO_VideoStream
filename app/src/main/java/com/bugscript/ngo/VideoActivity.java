@@ -3,11 +3,9 @@ package com.bugscript.ngo;
 import android.annotation.SuppressLint;
 import android.app.PictureInPictureParams;
 import android.content.Context;
-import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Rational;
@@ -28,7 +26,7 @@ import com.google.android.exoplayer2.upstream.cache.CacheDataSource;
 import com.google.android.exoplayer2.upstream.cache.CacheDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
 
-import static com.bugscript.ngo.Utilities.VideoURI.MP4_URI;
+import static com.bugscript.ngo.Utilities.Constants.MP4_URI;
 
 public class VideoActivity extends AppCompatActivity {
 

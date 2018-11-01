@@ -10,10 +10,10 @@ import com.google.android.exoplayer2.offline.DownloadService;
 import com.google.android.exoplayer2.scheduler.Scheduler;
 import com.google.android.exoplayer2.ui.DownloadNotificationUtil;
 
-public class VideoDownloadService extends DownloadService {
+import static com.bugscript.ngo.Utilities.Constants.NOTIFICATION_CHANNEL_ID;
+import static com.bugscript.ngo.Utilities.Constants.NOTIFICATION_ID;
 
-    private static String NOTIFICATION_CHANNEL_ID = "downChannel";
-    private static int NOTIFICATION_ID = 12;
+public class VideoDownloadService extends DownloadService {
 
     public VideoDownloadService(){
         super(NOTIFICATION_ID, DEFAULT_FOREGROUND_NOTIFICATION_UPDATE_INTERVAL, NOTIFICATION_CHANNEL_ID, R.string.download_channel_name);
